@@ -127,3 +127,100 @@ console.log(sentence);
 // Excercise 3 ---------------
 
 
+const productList = [
+    {
+        name: "Milk",
+        price: 3
+    },
+    {
+        name: "Banana",
+        price: 14
+    },
+    {
+        name: "Muffin",
+        price: 9
+    }
+];
+
+
+function listByprice(a, b,) {
+    return a.price - b.price;
+}
+
+
+const sortedProductLIst = productList.sort(listByprice);
+
+console.log(sortedProductLIst);
+
+// filter --------------------
+
+const carList = [
+    {
+        name: "Mercedes",
+        color: "BLUE"
+    },
+    {
+        name: "BMW",
+        color: "RED"
+    },
+    {
+        name: "Tesla",
+        color: "BLACK"
+    },
+    {
+        name: "Mercedes",
+        color: "RED"
+    }
+];
+
+
+
+
+function filterRedcars(cars) {
+    if (cars.color === "Red") {
+        return true;
+    }
+    return false;
+}
+
+
+console.log(carList.filter(filterRedcars)); // what is going on here?
+
+
+// Range filter
+
+const numberList = [1, 3, 45, 67, 75, 3, 8, 93, 4, 45, 18];
+
+function rangeFilter(arr, a, b) {
+    function filterNumber(number) {
+        if (number >= a && number <= b) {
+            return true;
+        }
+        return false;
+    }
+
+    const filterArray = arr.filter(filterNumber);
+
+    return filterArray;
+}
+
+
+console.log(rangeFilter(numberList, 10, 20));
+
+
+// sum all the numbers in an array
+
+const sumNumberList = [1, 3, 45, 67, 75, 3, 8, 93, 4, 45, 18];
+
+function sumFunction(arr) {
+
+    const sum = arr.reduce(function (acc, sum1) {   // help!!!!!!!
+        return acc + sum1;
+    });
+    return sum;
+}
+
+const range = rangeFilter(sumNumberList, 10, 20);
+const sum2 = range.reduce(sumFunction, 0);
+
+console.log(sum2);
