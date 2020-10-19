@@ -15,15 +15,21 @@
         border-radius: 3px;
         width: 200px;
     }
-
     /* CSS SELECTORS: ID, CLASS, ETC*/
+    
     #car-list {
         flex-wrap: wrap;
         display: block;
     }
-
+    
     .some-class {
         margin: 5px;
+    }
+    
+    .form1 {
+        position: relative;
+        top: 30px;
+        padding-bottom: 20px;
     }
 </style>
 
@@ -32,8 +38,19 @@
     <h1>Our Cars on Sale:</h1>
     <div id="car-list" class="some-class" style="display: flex;">
 
+    </div>
+
+    <div class="form1">
+        <form>
+            <label for="carForm"> Enter your carname here!</label></br>
+            <input type="text" id="carForm" name="fname">
+            </br>
+            </br>
+
+            <input type="submit" id=myBtn value="submit">
 
 
+        </form>
     </div>
 
 
