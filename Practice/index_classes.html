@@ -32,26 +32,44 @@
         padding-bottom: 20px;
     }
 </style>
+<script>
+    function onClick() {
+        // take the car name input
+        // call get cars with it
+        const inputElementValue = document.getElementById("carForm").value;
+        console.log(document.getElementById("carForm"))
+        if (inputElementValue == "") {
+            alert("Please add a car brand!")
+        } else {
+            getCars(inputElementValue)
+        }
+
+    }
+</script>
 
 <body>
     <div id="app"></div>
+
+    <div class="form1">
+        <label for="carForm"> Enter your carname here!</label></br>
+        <input type="text" id="carForm" name="fname">
+        </br>
+
+
+        <button type="submit" id=myBtn value="submit" onclick="onClick()">Get Cars</button>
+
+
+    </div>
+
     <h1>Our Cars on Sale:</h1>
     <div id="car-list" class="some-class" style="display: flex;">
 
     </div>
 
-    <div class="form1">
-        <form>
-            <label for="carForm"> Enter your carname here!</label></br>
-            <input type="text" id="carForm" name="fname">
-            </br>
-            </br>
-
-            <input type="submit" id=myBtn value="submit">
 
 
-        </form>
-    </div>
+
+
 
 
 

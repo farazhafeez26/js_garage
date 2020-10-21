@@ -1,4 +1,3 @@
-
 //map, reduce, push 
 // constructor
 
@@ -18,7 +17,7 @@ const car = {
     brandName: "Ford",
     model: "1995",
     type: "passenger",
-    carNammode: function () {
+    carNammode: function() {
         return this.brandName + " " + this.model;
     }
 
@@ -33,7 +32,7 @@ const x = [1, 2, 3, 4];
 
 const y = colours.pop(); // not working or push 
 
-console.log(y);  // concat works
+console.log(y); // concat works
 
 
 
@@ -78,9 +77,10 @@ console.log(words.filter(bWords));
 
 const hobbies = ["tennis_racquet", "squash_racquet", "cricket", "football"];
 
-hobbies.forEach(function printtoconsole(haha) {
+const cc = hobbies.forEach(function printtoconsole(haha) {
     console.log(haha);
 });
+console.log(cc);
 
 // --------------
 
@@ -105,6 +105,7 @@ function makeHobbies(sports) {
     return "I love" + " " + sports;
 }
 
+
 myHobbies = hobbies.map(makeHobbies);
 
 console.log(myHobbies);
@@ -127,8 +128,7 @@ console.log(sentence);
 // Excercise 3 ---------------
 
 
-const productList = [
-    {
+const productList = [{
         name: "Milk",
         price: 3
     },
@@ -143,7 +143,7 @@ const productList = [
 ];
 
 
-function listByprice(a, b,) {
+function listByprice(a, b, ) {
     return a.price - b.price;
 }
 
@@ -154,8 +154,7 @@ console.log(sortedProductLIst);
 
 // filter --------------------
 
-const carList = [
-    {
+const carList = [{
         name: "Mercedes",
         color: "BLUE"
     },
@@ -214,7 +213,7 @@ const sumNumberList = [1, 3, 45, 67, 75, 3, 8, 93, 4, 45, 18];
 
 function sumFunction(arr) {
 
-    const sum = arr.reduce(function (acc, sum1) {   // help!!!!!!!
+    const sum = arr.reduce(function(acc, sum1) { // help!!!!!!!
         return acc + sum1;
     });
     return sum;
@@ -276,7 +275,7 @@ const productPricesNet = {
 function displayKeys(x) {
     const productKeys = Object.keys(productPricesNet); //this is an array
 
-    for (let i = 0; i < productKeys.length; i++) {      //use FOR array 
+    for (let i = 0; i < productKeys.length; i++) { //use FOR array 
         const key = productKeys[i];
         x[key] = x[key] * 1.19;
     }
@@ -293,7 +292,7 @@ function applyTax(productPricesNet) {
     // The new price should include the tax: old price * 1.19
     const productKeys = Object.keys(productPricesNet); //this is an array
 
-    for (let i = 0; i < productKeys.length; i++) {      //use FOR array 
+    for (let i = 0; i < productKeys.length; i++) { //use FOR array 
         const key = productKeys[i];
         productPricesNet[key] = productPricesNet[key] * 1.19; // ???
     }
