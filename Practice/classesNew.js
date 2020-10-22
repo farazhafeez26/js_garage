@@ -1,6 +1,6 @@
 class Car {
     // Car Class
-    constructor(brand, name, model, year, color, vehicleType, image) {
+    constructor(brand, name, model, year, color, vehicleType, image, image2) {
         this.brand = brand;
         this.name = name;
         this.model = model;
@@ -8,6 +8,7 @@ class Car {
         this.color = color;
         this.vehicleType = vehicleType;
         this.image = image;
+        this.image2 = image2;
 
     }
 
@@ -24,8 +25,7 @@ class Car {
     buildHtml() {
         const htmlToDisplayCar = `
                 <div class="car-container" style="background-color:${this.color}">
-                    <h3>${this.getFullName()}</h3>
-                    <h4>Age: ${this.getAge()}<h4>
+                    <h3>${this.getFullName()}</h3>             
                     <h4>Year: ${this.year}<h4>
                     <h4>Model: ${this.model}</h4>
                     <h4>Vehicle Type: ${this.vehicleType}</h4>
@@ -35,6 +35,41 @@ class Car {
             `;
         return htmlToDisplayCar
     }
+
+    buildHtml1() {
+        const htmlToDisplayCar = `
+                <div class="car-container" style="background-color:${this.color}">
+                    <h3>${this.getFullName()}</h3>             
+                    <h4>Year: ${this.year}<h4>
+                    <h4>Model: ${this.model}</h4>
+                    <h4>Vehicle Type: ${this.vehicleType}</h4>
+                    <img class="car-image" src=${this.image}>
+
+                </div>
+            `;
+        return htmlToDisplayCar
+    }
+
+
+    display1() {
+
+
+
+
+        // create an element
+        const carCont = document.createElement("div");
+        // carCont.classList.add("car-container");
+
+        // add content to it
+        carCont.innerHTML = this.buildHtml1();
+
+        // place it in the DOM -- html
+        document.getElementById("car-list").appendChild(carCont)
+
+    }
+
+
+
 
     display() {
 
@@ -144,7 +179,7 @@ cars
         return a.year - b.year;
     })
     .forEach(function displayCars(car) {
-        car.display();
+        // car.display();
     })
 
 
@@ -187,31 +222,36 @@ async function getCars(carBrand) {
 
 
 
-    const imageList = await fetch(`https://pixabay.com/api/?key=18778392-8f3246dfa52f09fb95734c5a0&/${carBrand}=cars&image_type=photo`)
-        .then(response => response.json())
-        .then(data => {
-            return data.hits
-        }).catch(error => (console.error(error)));
+    // Try to get one single image. 
+
 
 
 
     // Painting the car list
-    console.log(carList, imageList);
+    console.log(carList);
 
 
-    carList.map(car => {
+    carList.map(async(car) => {
 
 
         // Need an image here
         // TODO: Get an image for each car -- car.Make_Name, car.Model_Name
-        // https://pixabay.com/api/docs/
+        // https://pixabay.com/api/docs
+
+        const carImageUrl = await fetch(encodeURI(`https://pixabay.com/api/?key=18778392-8f3246dfa52f09fb95734c5a0&q=${car.Make_Name}+${car.Model_Name}&image_type=photo`)) //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
+            .then(response => response.json())
+            .then(data => {
+                return data.hits[0].previewURL
+            }).catch(error => (console.error(error)));
+
+        console.log(`https://pixabay.com/api/?key=18778392-8f3246dfa52f09fb95734c5a0&/q=${car.Make_Name}%20${car.Model_Name}&image_type=photo`, "url")
+        console.log(carImageUrl)
+
+        const carRender = new Car(car.Make_Name, car.Model_Name, car.Model_ID, 2000, "white", "sedan", carImageUrl) //
 
 
-        const carRender = new Car(car.Make_Name, car.Model_Name, car.Model_ID, car.previewURL) //
-
-
-        carRender.display()
+        console.log(carRender.display1())
     })
 }
 
-getCars() // call the function
+getCars(); // call the function

@@ -13,7 +13,11 @@
         background-color: #BCEDF6;
         border: 1px solid #4C2A85;
         border-radius: 3px;
-        width: 200px;
+        width: 300px;
+    }
+    
+    .car-image {
+        width: 100%
     }
     /* CSS SELECTORS: ID, CLASS, ETC*/
     
@@ -34,6 +38,11 @@
 </style>
 <script>
     function onClick() {
+        // cleanup
+
+        document.getElementById("car-list").innerHTML = "";
+
+
         // take the car name input
         // call get cars with it
         const inputElementValue = document.getElementById("carForm").value;
