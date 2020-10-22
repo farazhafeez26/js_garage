@@ -321,3 +321,21 @@ console.log(productPricesBrutto);
 
 
 //-----------------
+
+
+//Acess an array
+
+
+const cars = ["Saab", "Volvo", "BMW"];
+//document.getElementById("demo").innerHTML = cars[0];
+
+var text = hi;
+
+
+for (let i = 0; i < cars.length; i++) {
+
+    text += cars[i];
+
+}
+
+console.log(text);

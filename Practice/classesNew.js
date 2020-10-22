@@ -1,29 +1,35 @@
-class Car {
-    // Car Class
-    constructor(brand, name, model, year, color, vehicleType, image, image2) {
-        this.brand = brand;
-        this.name = name;
-        this.model = model;
-        this.year = year;
-        this.color = color;
-        this.vehicleType = vehicleType;
-        this.image = image;
-        this.image2 = image2;
+< !DOCTYPE html >
 
-    }
+    <
+    html >
 
-    // methods
-    getAge() {
-        return new Date().getFullYear() - this.year;
-    }
+    <
+    head >
+    <
+    title > Page title < /title> <
+    script src = "recap.js" > < /script> <
+    /head>
 
-    // methods
-    getFullName() {
-        return this.brand + " " + this.name + " - " + this.model;
-    }
+<
+body >
 
-    buildHtml() {
-        const htmlToDisplayCar = `
+
+
+    <
+    /body>
+
+
+
+<
+/html>
+
+// methods
+getFullName() {
+    return this.brand + " " + this.name + " - " + this.model;
+}
+
+buildHtml() {
+    const htmlToDisplayCar = `
                 <div class="car-container" style="background-color:${this.color}">
                     <h3>${this.getFullName()}</h3>             
                     <h4>Year: ${this.year}<h4>
@@ -33,11 +39,11 @@ class Car {
                     
                 <div>
             `;
-        return htmlToDisplayCar
-    }
+    return htmlToDisplayCar
+}
 
-    buildHtml1() {
-        const htmlToDisplayCar = `
+buildHtml1() {
+    const htmlToDisplayCar = `
                 <div class="car-container" style="background-color:${this.color}">
                     <h3>${this.getFullName()}</h3>             
                     <h4>Year: ${this.year}<h4>
@@ -47,46 +53,46 @@ class Car {
 
                 </div>
             `;
-        return htmlToDisplayCar
-    }
+    return htmlToDisplayCar
+}
 
 
-    display1() {
-
-
-
-
-        // create an element
-        const carCont = document.createElement("div");
-        // carCont.classList.add("car-container");
-
-        // add content to it
-        carCont.innerHTML = this.buildHtml1();
-
-        // place it in the DOM -- html
-        document.getElementById("car-list").appendChild(carCont)
-
-    }
+display1() {
 
 
 
 
-    display() {
+    // create an element
+    const carCont = document.createElement("div");
+    // carCont.classList.add("car-container");
+
+    // add content to it
+    carCont.innerHTML = this.buildHtml1();
+
+    // place it in the DOM -- html
+    document.getElementById("car-list").appendChild(carCont)
+
+}
 
 
 
 
-        // create an element
-        const carCont = document.createElement("div");
-        // carCont.classList.add("car-container");
+display() {
 
-        // add content to it
-        carCont.innerHTML = this.buildHtml();
 
-        // place it in the DOM -- html
-        document.getElementById("car-list").appendChild(carCont)
 
-    }
+
+    // create an element
+    const carCont = document.createElement("div");
+    // carCont.classList.add("car-container");
+
+    // add content to it
+    carCont.innerHTML = this.buildHtml();
+
+    // place it in the DOM -- html
+    document.getElementById("car-list").appendChild(carCont)
+
+}
 }
 
 class Mercedes extends Car {
@@ -255,3 +261,10 @@ async function getCars(carBrand) {
 }
 
 getCars(); // call the function
+
+
+
+
+
+
+//questions - on line 234 why is there an async function for MAP
