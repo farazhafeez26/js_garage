@@ -258,11 +258,3 @@ async function getCars(carBrand) {
     }
 
 }
-
-
-
-
-
-
-
-//questions - on line 234 why is there an async function for MAP
