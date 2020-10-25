@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+</head>
+
+<style>
+    .car-container {
+        margin: 5px;
+        padding: 5px;
+        background-color: #BCEDF6;
+        border: 1px solid #4C2A85;
+        border-radius: 3px;
+        width: 300px;
+    }
+    
+    .car-image {
+        width: 100%
+    }
+    /* CSS SELECTORS: ID, CLASS, ETC*/
+    
+    #car-list {
+        flex-wrap: wrap;
+        display: block;
+    }
+    
+    .some-class {
+        margin: 5px;
+    }
+    
+    .form1 {
+        position: relative;
+        top: 30px;
+        padding-bottom: 20px;
+    }
+</style>
+<script>
+    function onClick() {
+        // cleanup
+
+        document.getElementById("car-list").innerHTML = "";
+
+
+
+        // take the car name input
+        // call get cars with it
+        const inputElementValue = document.getElementById("carForm").value;
+        console.log(document.getElementById("carForm"))
+
+        if (inputElementValue == "") {
+            alert("Please add a car brand!")
+        } else {
+            getCars(inputElementValue)
+        }
+
+
+        const sortValue = document.getElementById("sorting").value;
+
+        if (sortValue == "Ascending") {
+
+            getCars(inputElementValue).sort(function sortItA(a, b) {
+                return a.model - b.model;
+
+            })
+        }
+        if (sortValue == "Descending") {
+
+            getCars(inputElementValue).sort(function sortItB(b, a) {
+                return b.model - a.model;
+            })
+
+        }
+
+
+
+
+
+
+
+
+    }
+</script>
+
+<body>
+    <div id="app"></div>
+
+
+
+    </div>
+
+
+    <div class="form1">
+        <label for="carForm"> Enter your carname here!</label></br>
+        <input type="text" id="carForm" name="fname">
+        </br>
+
+        <input type="radio" id=sorting name="sort" value="submit">
+        <label for="asc"> Ascending </label>
+
+
+        <input type="radio" id=sorting name="sort" value="submit">
+        <label for="desc "> Descending </label>
+
+        </br>
+        </br>
+        <button type="submit" id=myBtn value="submit" onclick="onClick()">Get Cars</button>
+        </br>
+
+    </div>
+
+    <div id="app"></div>
+
+    <h1>Our Cars on Sale:</h1>
+    <div id="car-list" class="some-class" style="display: flex;">
+
+    </div>
+
+
+
+
+
+
+
+    <script src="classesNew.js"></script>
+</body>
+
+</html>
