@@ -42,7 +42,7 @@
 
         document.getElementById("car-list").innerHTML = "";
 
-
+        let orderedCarList = [];
 
         // take the car name input
         // call get cars with it
@@ -52,31 +52,39 @@
         if (inputElementValue == "") {
             alert("Please add a car brand!")
         } else {
-            getCars(inputElementValue)
+
+
+
+            const sortValue = document.getElementById("sorting").value;
+            console.log(sortValue, "sortValue")
+
+            getCars(inputElementValue).then(carList => {
+
+                if (sortValue == "Ascending") {
+
+                    orderedCarList = carList.sort(function sortItA(a, b) {
+                        return a.model - b.model;
+
+                    })
+                } else if (sortValue == "Descending") {
+
+                    orderedCarList = carList.sort(function sortItB(b, a) {
+                        return b.model - a.model;
+                    })
+
+                } else {
+                    orderedCarList = carList
+                }
+            });
+
+
         }
 
+        // display the car list
+        orderedCarList.forEach(function(element) {
+            element.display1()
 
-        const sortValue = document.getElementById("sorting").value;
-
-        if (sortValue == "Ascending") {
-
-            getCars(inputElementValue).sort(function sortItA(a, b) {
-                return a.model - b.model;
-
-            })
-        }
-        if (sortValue == "Descending") {
-
-            getCars(inputElementValue).sort(function sortItB(b, a) {
-                return b.model - a.model;
-            })
-
-        }
-
-
-
-
-
+        })
 
 
 
@@ -96,11 +104,11 @@
         <input type="text" id="carForm" name="fname">
         </br>
 
-        <input type="radio" id=sorting name="sort" value="submit">
+        <input type="radio" id=sorting name="sort" value="Ascending">
         <label for="asc"> Ascending </label>
 
 
-        <input type="radio" id=sorting name="sort" value="submit">
+        <input type="radio" id=sorting name="sort" value="Descending">
         <label for="desc "> Descending </label>
 
         </br>
