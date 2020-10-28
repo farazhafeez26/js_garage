@@ -1,4 +1,4 @@
-ass Car {
+class Car {
     // Car Class
     constructor(brand, name, model, year) {
         this.brand = brand;
