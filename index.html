@@ -3,16 +3,69 @@
 <html>
 
 <head>
-    <title> Page title </title>
-    <script src="recap.js"></script>
+    <title>Page title</title>
+    <script src="arrayMethods.js"></script>
 </head>
+
+<style>
+    .flexbox-container {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: yellow;
+        align-items: center;
+    }
+    
+    .flexbox-item {
+        width: 200px;
+        margin: 5px;
+        border: 3px solid #333;
+        background-color: white;
+    }
+    
+    .flexbox-item-1 {
+        min-height: 100px;
+        /*flex-grow: 0; you can  order to sequence  flex box items  */
+    }
+    
+    .flexbox-item-2 {
+        min-height: 500px;
+        flex-grow: 1;
+    }
+</style>
 
 <body>
 
+    <div class="flexbox-container">
+
+        <div class="flexbox-item flexbox-item-1">
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+                sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+                dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut
+                metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet
+                adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros
+                faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+            </p>
+        </div>
+     
+
+            <h2> My to do list  </h2>
+
+            <input type="text" id="myInput" placeholder="title....">
+            <span><button onclick="newElement()">Add </button></span>
+
+<ul id="myUL">
 
 
+<li>asdsa</li>
+
+</ul>
+
+
+
+            
+         
+    </div>
 </body>
-
-
 
 </html>
