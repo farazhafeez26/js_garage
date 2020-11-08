@@ -16,8 +16,8 @@ const[a,b,...rest]=alphabet
 
 console.log(rest)
 
-
-
+//https://www.youtube.com/watch?v=R8rmfD9Y5-c
+//https://docs.google.com/spreadsheets/d/1SZVNfIRqIJ3k_CbiRZPGG-MnGc0OVVL5Hm1DkrkiMy8/edit#gid=0
  //practice filter, map, for each, find,reduce, includes
  const itemNames = items.forEach((item) => {
          console.log(item.name)
