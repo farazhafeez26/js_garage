@@ -41,3 +41,10 @@ function outputItems() {
   }
 }
 console.log(outputItems());
+
+function useX() {
+  for (x of items) {
+    console.log(x);
+  }
+}
+console.log(useX());
