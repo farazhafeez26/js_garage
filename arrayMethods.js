@@ -48,3 +48,9 @@ function useX() {
   }
 }
 console.log(useX());
+
+function printMynumber(y) {
+  return y / y;
+}
+
+console.log(printMynumber(5));
