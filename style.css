@@ -30,6 +30,16 @@ body {
   width: 100%;
 }
 
+img {
+  background-image: url("https://content.codecademy.com/courses/freelance-1/unit-2/explorer.jpeg");
+  background-size: cover;
+  height: 10;
+  width: 100%;
+}
+
+.description li {
+  display: inline-block;
+}
 #banner .content h1 {
   border: 3px solid white;
   position: relative;
