@@ -33,8 +33,15 @@ body {
 img {
   background-image: url("https://content.codecademy.com/courses/freelance-1/unit-2/explorer.jpeg");
   background-size: cover;
-  height: 10;
+
   width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.wholecontent {
+  top: 400px;
+  z-index: 1;
 }
 
 .description li {
