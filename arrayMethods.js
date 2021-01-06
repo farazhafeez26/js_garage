@@ -54,3 +54,70 @@ function printMynumber(y) {
 }
 
 console.log(printMynumber(5));
+
+//Sum
+
+function sum(array) {
+  let total = 0;
+  for (let i = 0; i < array.length; i++) {
+    total = array[i] + total;
+  }
+  return total; // total has been already calculated why do we need to return it.
+}
+
+console.log(sum([2, 3])); // Is this because of the array data type
+
+function max(array) {
+  let maxValue = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] >= maxValue) {
+      maxValue = array[i];
+    }
+    return maxValue;
+  }
+}
+console.log(max([5, 6, 2]));
+
+function longestword(string) {
+  let maxValue = 0;
+  let longest = "";
+  let words = string.split(" "); //?
+  for (let i = 0; i < words.length; i++) {
+    if (words[i] > maxValue) {
+      //wordsi is a string how can a string be greater than a number?
+      longest = words[i];
+      maxValue = longest.length;
+    }
+    return longest;
+  }
+}
+
+console.log(longestword("sieze the day"));
+
+//???????? doesnt work
+
+function remove(array, element) {
+  let finalArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] !== element) {
+      finalArray.push(array[i]);
+    }
+    return finalArray;
+  }
+}
+
+console.log(remove([1, 2, 3, 3, 4, 4], 4));
+
+//???????? doesnt work
+
+function even(array) {
+  let finalArray = [];
+
+  for (let i = 0; i < array[i]; i++) {
+    if (array[i] % 2 === 0) {
+      finalArray.push(array[i]);
+    }
+    return finalArray;
+  }
+}
