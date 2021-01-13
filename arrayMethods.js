@@ -82,17 +82,22 @@ function longestword(string) {
   let maxValue = 0;
   let longest = "";
   let words = string.split(" "); //?
+  //console.log(words); check
   for (let i = 0; i < words.length; i++) {
-    if (words[i] > maxValue) {
+    //console.log(i); //check
+    if (words[i].length > maxValue) {
       //wordsi is a string how can a string be greater than a number?
       longest = words[i];
       maxValue = longest.length;
     }
-    return longest;
   }
+  return longest;
 }
 
-console.log(longestword("sieze the day"));
+console.log(
+  longestword("today is thursday and I am so happy to be coding js"),
+  "longestword"
+);
 
 //???????? doesnt work
 
@@ -103,8 +108,8 @@ function remove(array, element) {
     if (array[i] !== element) {
       finalArray.push(array[i]);
     }
-    return finalArray;
   }
+  return finalArray;
 }
 
 console.log(remove([1, 2, 3, 3, 4, 4], 4));
@@ -114,10 +119,39 @@ console.log(remove([1, 2, 3, 3, 4, 4], 4));
 function even(array) {
   let finalArray = [];
 
-  for (let i = 0; i < array[i]; i++) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(i);
     if (array[i] % 2 === 0) {
       finalArray.push(array[i]);
     }
-    return finalArray;
+  }
+
+  return finalArray; // break
+}
+console.log(even([1, 2, 2, 3, 4]));
+
+// Reference on scope
+{
+  let scope1 = "scope 1";
+  {
+    let scope2 = "scope2";
+    let test = "pum";
+    {
+      let scope3 = "scope3";
+      // let test = "pam";
+
+      console.log(test, "test"); // pam
+    }
+    console.log(test, "test"); // pum
   }
 }
+
+let characters = ["harry", "james", "solid"];
+characters.forEach((item) => {
+  console.log("${item} is");
+});
+
+let character = ["harry", "james", "solid"];
+character.map((item) => {
+  console.log(character.length);
+});
